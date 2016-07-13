@@ -4,11 +4,20 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import de.fraunhofer.iosb.ilt.sta.model.Entity;
 import de.fraunhofer.iosb.ilt.sta.model.EntityType;
 
 /**
- * Type safe builder of $expand queries.
+ * Type safe builder of $expand queries. You can use it in a human readable way, e.g.:
+ * 
+ * <pre><code>
+ * Expansion.of(EntityType.THING)
+ * 			.with(ExpandedEntity.of(EntityType.LOCATIONS))
+ * 			.and(ExpandedEntity.of(EntityType.DATASTREAMS, EntityType.OBSERVATIONS))
+ * 			.and(ExpandedEntity.of(EntityType.DATASTREAMS, EntityType.SENSOR));
+ * </code></pre>
+ * 
+ * This expansion would be valid for Thing requests and expand to the thing's locations,
+ * observations of the thing's datastreams and the sensor of each datastream of the thing.
  * 
  * @author Nils Sommer
  *

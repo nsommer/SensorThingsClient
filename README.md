@@ -84,9 +84,11 @@ for (Thing thing : things) {
 
 ### Loading referenced objects
 
-Loading referenced objects in one operation (and therefore in one request) is supported. The *$expand* option of the SensorThingsAPI standard is used.
+Loading referenced objects in one operation (and therefore in one request) is supported. The *$expand* option of the SensorThingsAPI standard is used internally.
 
 ```java
-Thing thing = service.things().find(1l, Expansion.with(ExpandedEntity.from(EntityType.LOCATION)));
-Location referencedLocation = thing.getLocation();
+Thing thing = service.things().find(1l, 
+				Expansion.of(EntityType.THING)
+				.with(ExpandedEntity.from(EntityType.LOCATIONS)));
+EntityList<Location> locations = thing.getLocations();
 ```
