@@ -43,7 +43,7 @@ The `SensorThingsService` class is central to the library. An instantiation of i
 
 ### CRUD operations
 
-The source code below demonstrates the CRUD operations for Thing objects. Operations for other entities work similarily.
+The source code below demonstrates the CRUD operations for Thing objects. Operations for other entities work similarly.
 
 ```java
 URI serviceEndpoint = URI.create("http://example.org/v1.0/");
