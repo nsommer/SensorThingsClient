@@ -1,7 +1,9 @@
 SensorThingsClient
 ==================
 
-This is a client library to connect java applications to servers providing a [SensorThingsAPI](https://github.com/opengeospatial/sensorthings) service.
+This library provides a Java-based client library for the [SensorThingsAPI](https://github.com/opengeospatial/sensorthings) and aims to simplify development of SensorThings enabled client applications.
+
+**Note:** This project is still under development and therefore lacks complete support of the SensorThingsAPI.
 
 ## Features
 
@@ -82,13 +84,27 @@ for (Thing thing : things) {
 }
 ```
 
+However, `$expand` does not work on queries yet.
+
 ### Loading referenced objects
 
 Loading referenced objects in one operation (and therefore in one request) is supported. The *$expand* option of the SensorThingsAPI standard is used internally.
 
 ```java
-Thing thing = service.things().find(1l, 
+Thing thing = service.things().find(1l,
 				Expansion.of(EntityType.THING)
 				.with(ExpandedEntity.from(EntityType.LOCATIONS)));
 EntityList<Location> locations = thing.getLocations();
 ```
+
+## Contributing
+
+Contributions are welcome!
+
+1. Fork this repository
+2. Commit your changes
+3. Create a pull request
+
+## License
+
+The code and the documentation of this work is available under the MIT license.
