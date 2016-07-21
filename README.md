@@ -19,29 +19,9 @@ This library provides a Java-based client library for the [SensorThingsAPI](http
 * dataArray
 * MQTT
 
-## Build
-
-SensorThingsClient is built with maven.
-
-```bash
-mvn install
-```
-
-## Installation
-
-At the moment, there is no centralized maven repository which serves SensorThingsClient, therefore you need a copy a local copy of the library. Put this into your pom.xml:
-
-```xml
-<dependency>
-	<groupId>de.fraunhofer.iosb.ilt</groupId>
-	<artifactId>SensorThingsClient</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-</dependency>
-```
-
 ## API
 
-The `SensorThingsService` class is central to the library. An instantiation of it represents a SensorThings service and is identified by an URI.
+The `SensorThingsService` class is central to the library. An instance of it represents a SensorThings service and is identified by an URI.
 
 ### CRUD operations
 
@@ -96,6 +76,10 @@ Thing thing = service.things().find(1l,
 				.with(ExpandedEntity.from(EntityType.LOCATIONS)));
 EntityList<Location> locations = thing.getLocations();
 ```
+
+## Background
+
+This library emerged from a practical work for a lecture at [KIT](http://www.kit.edu) in in collaboration with the [Fraunhofer IOSB](http://iosb.fraunhofer.de). A [server implementation](https://github.com/FraunhoferIOSB/SensorThingsServer) of the SensorThingsAPI, developed by the Fraunhofer IOSB, is available on GitHub, too.
 
 ## Contributing
 
