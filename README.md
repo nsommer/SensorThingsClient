@@ -1,4 +1,4 @@
-SensorThingsClient
+SensorThingsClient [![Build Status](https://travis-ci.org/nsommer/SensorThingsClient.svg?branch=master)](https://travis-ci.org/nsommer/SensorThingsClient)
 ==================
 
 This library provides a Java-based client library for the [SensorThingsAPI](https://github.com/opengeospatial/sensorthings) and aims to simplify development of SensorThings enabled client applications.
